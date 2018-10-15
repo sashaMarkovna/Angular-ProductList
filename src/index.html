@@ -13,16 +13,24 @@
 <body>
 
     <div ng-controller="httpController">
-        <p>Search... <input type="text" ng-model="keyword"></p>
+        <div class="search"><p style="font-style: italic ">Search... <input class="search-input" type="text" ng-model="keyword"></p></div>
         <product-card product="product" ng-repeat="product in products | filter:keyword">
-            <table class="productCard">
-                <tr ng-repeat="(key, value) in product">
-                    <td class='left-td'>{{ transformKeys(key) }}</td>
-                    <td>
-                        <product-descr>{{ transformVal(key, value) }}</product-descr>
-                    </td>
-                </tr>
-            </table>
+            <div class="productCard">
+                <p class="productDescription">{{ product.name }}</p>
+                <img ng-src="{{ product.img }}" class="item-img">
+                <table>
+                    <tr ng-if="key !== 'img' &&  key !== 'name'" ng-repeat="(key, value) in product">
+                        <td class='left-td'>{{ transformKeys(key) }}</td>
+                        <td>
+                            <a ng-if="key === 'link'" ng-href="{{value}}">Link...</a>
+                            <ul ng-if="key === 'size'">
+                                <li ng-repeat="item in value">{{item}}</li>
+                            </ul>
+                            <p ng-if="key !== 'link' && key !== 'img' && key !== 'size' && key !== 'name'">{{ifVal(value)}}</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </product-card>
     </div>
 

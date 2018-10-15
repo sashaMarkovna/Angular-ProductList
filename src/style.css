@@ -2,8 +2,27 @@ body {
     font-family: Lato, sans-serif;
 }
 
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.productDescription {
+    text-align: justify;
+    padding: 20px;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+}
+
 .productCard {
-    width: 30%;
+    width: 35%;
     min-width: 320px;
     max-width: 700px;
     margin-bottom: 20px;
@@ -11,8 +30,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-collapse: collapse;
-    border-spacing: 0;
     border: 1px solid rgba(0, 0, 0, 0.85);
 }
 
@@ -41,3 +58,28 @@ td{
 }
 
 .productLink a { color: black; }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid rgba(0, 0, 0, 0.85);
+    width: 100%;
+}
+
+.search-input {
+    height: 30px;
+    width: 200px;
+    font-size: 20px;
+    border-radius: 15px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    width: 35%;
+    justify-content: flex-end;
+    min-width: 320px;
+    max-width: 700px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
