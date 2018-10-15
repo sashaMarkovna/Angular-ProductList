@@ -19,7 +19,7 @@
                 <tr ng-repeat="(key, value) in product">
                     <td class='left-td'>{{ transformKeys(key) }}</td>
                     <td>
-                        <product-descr>{{ checkKeyValue(key, value) }}</product-descr>
+                        <product-descr>{{ transformVal(key, value) }}</product-descr>
                     </td>
                 </tr>
             </table>

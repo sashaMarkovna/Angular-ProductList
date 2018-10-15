@@ -28,9 +28,9 @@ app.directive('productDescr', function () {
 
             let imgTemplate = angular.element("<img>"),
                 linkTemplate = angular.element("<a>Product Link...</a>"),
-                arrTemplate = angular.element("<p></p>");
+                listTemplate = angular.element("<p></p>");
 
-            scope.checkKeyValue = function (key, value) {
+            scope.transformVal = function (key, value) {
 
                 if (!value) {
                     return "no information"
@@ -51,8 +51,8 @@ app.directive('productDescr', function () {
                     if (!str) { return 'no information' }
 
                     str = str.slice(0, length - 1).split(' ').join(" * ");
-                    arrTemplate.text(str);
-                    element.append(arrTemplate);
+                    listTemplate.text(str);
+                    element.append(listTemplate);
 
                 } else {
                     return value;
